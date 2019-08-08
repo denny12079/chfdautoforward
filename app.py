@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, request, abort
 
 from linebot import (
@@ -6,7 +8,9 @@ from linebot import (
 from linebot.exceptions import (
     InvalidSignatureError
 )
-from linebot.models import *
+from linebot.models import (
+    MessageEvent, JoinEvent, LeaveEvent, TextMessage, TextSendMessage
+)
 
 app = Flask(__name__)
 
